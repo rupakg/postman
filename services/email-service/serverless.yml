@@ -20,3 +20,7 @@ provider:
 functions:
   send:
     handler: handler.sendEmail
+    events:
+      - http:
+          path: email
+          method: post
