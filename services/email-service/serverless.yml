@@ -18,5 +18,5 @@ provider:
   runtime: nodejs6.10
 
 functions:
-  hello:
-    handler: handler.hello
+  send:
+    handler: handler.sendEmail
