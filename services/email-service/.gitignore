@@ -4,3 +4,9 @@ jspm_packages
 
 # Serverless directories
 .serverless
+
+# dev stage config
+config.dev.json
+
+# prod stage config
+config.prod.json
