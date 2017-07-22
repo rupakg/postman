@@ -48,7 +48,14 @@ module.exports.sendEmail = (event, context, callback) => {
       if (error) {
         // log error response
         console.log(error);
-        callback(error);
+        const response = {
+          statusCode: 400,
+          body: JSON.stringify({
+            message: error,
+            input: body,
+          }),
+        };
+        callback(null, response);
       } else {
         const response = {
           statusCode: 202,
