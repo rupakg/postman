@@ -21,11 +21,15 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
+      - run:
+          command: |
+            sudo -u root createuser -h localhost --superuser ubuntu &&
+            yarn install
+            npm i -g serverless
+            
       - run: 
           command: |
             cd services/email-service
-            yarn install
-            npm i -g serverless
             sls deploy
 
       - save_cache:
