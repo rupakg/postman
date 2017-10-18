@@ -23,9 +23,8 @@ jobs:
 
       - run:
           command: |
-            sudo -u root createuser -h localhost --superuser ubuntu &&
             yarn install
-            npm i -g serverless
+            sudo npm i -g serverless
             
       - run: 
           command: |
