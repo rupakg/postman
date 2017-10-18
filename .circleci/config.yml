@@ -30,11 +30,11 @@ jobs:
           command: |
             cd services/email-service
             touch config.prod.json
-            '{' >> config.prod.json
-            '"region": "us-east-1",' >> config.prod.json
-            '"MAILGUN_APIKEY": ${MAILGUN_APIKEY}' >> config.prod.json
-            '"MAILGUN_DOMAIN": ${MAILGUN_DOMAIN}' >> config.prod.json
-            '}' >> config.prod.json
+            echo '{' >> config.prod.json
+            echo '"region": "us-east-1",' >> config.prod.json
+            echo '"MAILGUN_APIKEY": ${MAILGUN_APIKEY}' >> config.prod.json
+            echo '"MAILGUN_DOMAIN": ${MAILGUN_DOMAIN}' >> config.prod.json
+            echo '}' >> config.prod.json
             sls deploy
 
       - save_cache:
