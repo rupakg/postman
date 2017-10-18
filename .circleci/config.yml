@@ -22,11 +22,11 @@ jobs:
           - v1-dependencies-
 
       - run: 
-        command: |
-          cd services/email-service
-          yarn install
-          npm i -g serverless
-          sls deploy
+          command: |
+            cd services/email-service
+            yarn install
+            npm i -g serverless
+            sls deploy
 
       - save_cache:
           paths:
