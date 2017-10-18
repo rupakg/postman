@@ -32,8 +32,8 @@ jobs:
             touch config.prod.json
             echo '{' >> config.prod.json
             echo '  "region": "us-east-1",' >> config.prod.json
-            echo '  "MAILGUN_APIKEY": "' ${MAILGUN_APIKEY} '"'>> config.prod.json
-            echo '  "MAILGUN_DOMAIN": "' ${MAILGUN_DOMAIN} '"'>> config.prod.json
+            echo '  "MAILGUN_APIKEY": "'${MAILGUN_APIKEY}'",'>> config.prod.json
+            echo '  "MAILGUN_DOMAIN": "'${MAILGUN_DOMAIN}'"'>> config.prod.json
             echo '}' >> config.prod.json
             cat config.prod.json
             sls deploy
