@@ -36,7 +36,8 @@ jobs:
             echo '  "MAILGUN_DOMAIN": "'${MAILGUN_DOMAIN}'"'>> config.prod.json
             echo '}' >> config.prod.json
 
-      - deploy: sls deploy
+      - deploy: 
+          sls deploy
 
       - save_cache:
           paths:
