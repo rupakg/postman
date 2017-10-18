@@ -37,7 +37,7 @@ jobs:
             echo '}' >> config.prod.json
 
       - deploy: 
-          sls deploy
+          command: sls deploy
 
       - save_cache:
           paths:
