@@ -9,7 +9,7 @@ jobs:
       # specify the version you desire here
       - image: circleci/node:6.10
 
-    working_directory: ~/services/email-service
+    working_directory: ~/postman
 
     steps:
       - checkout
@@ -21,7 +21,12 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - run: yarn install
+      - run: 
+        command: |
+          cd services/email-service
+          yarn install
+          npm i -g serverless
+          sls deploy
 
       - save_cache:
           paths:
@@ -29,4 +34,4 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
         
       # run tests!
-      - run: yarn test
+      # - run: yarn test
